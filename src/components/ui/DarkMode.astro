@@ -1,0 +1,42 @@
+---
+import Icon from '@/components/icons/icon.astro';
+---
+
+<!-- From Uiverse.io by jubayer-10 -->
+<div class="inline-flex items-center select-none relative">
+  <button
+    class="cursor-pointer"
+    id="toggle"
+    aria-label="ícono de modo oscuro o claro para la página"
+  >
+    <div
+      class="relative w-[70px] h-8 bg-white dark:bg-neutral-700 rounded-full after:absolute after:content-[''] after:w-[24px] after:h-[24px] after:bg-gradient-to-r after:from-orange-500 after:to-yellow-400 dark:after:from-neutral-900 dark:after:to-neutral-900 after:rounded-full after:top-[4px] after:left-[8px] active:after:w-[50px] dark:after:left-[62px] dark:after:translate-x-[-100%] shadow-sm duration-300 after:duration-300 after:shadow-md md:w-[90px] md:h-[40px] md:after:w-[30px] md:after:h-[30px] md:after:top-[5px] md:dark:after:left-[82px]"
+    >
+    </div>
+    <Icon
+      name="sun"
+      class="fill-white dark:opacity-60 absolute size-3.5 top-[9px] left-[13px] md:size-5 md:top-[10px]"
+    />
+    <Icon
+      name="moon"
+      class="fill-black dark:fill-white opacity-60 dark:opacity-70 absolute size-3.5 top-[9px] right-[13px] md:size-5 md:top-[10px]"
+    />
+  </button>
+</div>
+
+<script type="module" is:inline>
+  const $button = document.getElementById('toggle');
+
+  $button?.addEventListener('click', () => {
+    const html = document.documentElement;
+    const isDark = html.classList.contains('dark');
+
+    if (isDark) {
+      html.classList.remove('dark');
+      localStorage.setItem('darkMode', 'false');
+    } else {
+      html.classList.add('dark');
+      localStorage.setItem('darkMode', 'true');
+    }
+  });
+</script>
