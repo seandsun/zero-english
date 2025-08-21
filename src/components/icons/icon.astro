@@ -1,0 +1,30 @@
+---
+import Moon from '@/components/icons/moon.astro';
+import Sun from '@/components/icons/sun.astro';
+
+const icons = {
+  moon: Moon,
+  sun: Sun,
+};
+
+type IconName = keyof typeof icons;
+
+interface Props {
+  name: IconName;
+  class?: string;
+}
+
+const { name, class: className } = Astro.props as Props;
+
+const IconComponent = icons[name];
+---
+
+{
+  IconComponent ? (
+    <IconComponent class={className} />
+  ) : (
+    <span class="text-red-500 font-mono text-xs">
+      [icon "{name}" not found]
+    </span>
+  )
+}
