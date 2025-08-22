@@ -2,3 +2,9 @@
 
 /* Dark mode */
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Colors */
+  --color-hueso-light: #f4f3ee;
+  --color-gray-dark: #1e1e1e;
+}
