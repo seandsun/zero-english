@@ -7,12 +7,14 @@ import mdx from '@astrojs/mdx';
 // https://astro.build/config
 export default defineConfig({
   vite: {
-    plugins: [tailwindcss(),],
+    plugins: [tailwindcss()],
     resolve: {
       alias: {
-        '@': path.resolve('./src')
-      }
-    }
+        '@': path.resolve('./src'),
+      },
+    },
   },
   integrations: [mdx()],
+  site: 'https://seandsun.github.io/portfolio-marisol-henao/',
+  base: '/portfolio-marisol-henao/',
 });
