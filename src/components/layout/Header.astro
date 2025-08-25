@@ -10,7 +10,7 @@ import Navbar from '@/components/layout/Navbar.astro';
   <nav class="max-w-3xl w-full flex justify-between items-center mx-auto">
     <a
       class="bg-black rounded-full flex justify-center items-center md:mr-[56px] md:size-10"
-      href="/"
+      href={`${import.meta.env.BASE_URL}`}
       aria-label="Logo del proyecto zero english"
     >
       <img
