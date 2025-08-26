@@ -2,9 +2,29 @@
 
 /* Dark mode */
 @custom-variant dark (&:where(.dark, .dark *));
-
+/* Import fonts */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 100 900;
+  src: url('/fonts/dm-sans/DMSans-VariableFont_opsz-wght.ttf')
+    format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 100 900;
+  src: url('/fonts/playfair-display/PlayfairDisplay-VariableFont_wght.ttf')
+    format('truetype');
+  font-display: swap;
+}
 @theme {
   /* Colors */
   --color-hueso-light: #f4f3ee;
   --color-gray-dark: #1e1e1e;
+
+  /* Fonts */
+  --font-DM-Sans: 'DM Sans';
+  --font-Playfair-Display: 'Playfair Display';
 }
