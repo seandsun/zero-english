@@ -20,7 +20,7 @@ import Navbar from '@/components/layout/Navbar.astro';
     </a>
     <Navbar isHorizontal={true} />
     <div
-      class="text-green-400 bg-white dark:bg-neutral-700 shadow-sm size-8 rounded-full flex items-center justify-center order-3 md:order-none md:hidden"
+      class="text-custom-gray-50 bg-custom-gray-900 dark:text-custom-gray-900 dark:bg-custom-gray-50 shadow-sm size-8 rounded-full flex items-center justify-center order-3 md:order-none md:hidden"
       id="open-btn"
     >
       <Icon name="ufo" class="cursor-pointer" />
@@ -32,14 +32,14 @@ import Navbar from '@/components/layout/Navbar.astro';
 </header>
 
 <div
-  class="bg-gray-800/50 fixed inset-0 hidden z-[9999] md:hidden"
+  class="bg-custom-gray-800/50 fixed inset-0 hidden z-[9999] md:hidden"
   id="menu-modal"
 >
   <div
     class="bg-hueso-light dark:bg-gray-dark w-56 absolute right-0 h-screen flex flex-col items-end px-6 py-7"
   >
     <div
-      class="text-green-400 bg-white dark:bg-neutral-700 shadow-xl size-8 rounded-full flex items-center justify-center"
+      class="text-custom-gray-50 bg-custom-gray-900 dark:text-custom-gray-900 dark:bg-custom-gray-50 shadow-xl size-8 rounded-full flex items-center justify-center"
       id="close-btn"
     >
       <Icon name="ufoOff" class="cursor-pointer" />
