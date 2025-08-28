@@ -1,56 +1,85 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /* Dark mode */
 @custom-variant dark (&:where(.dark, .dark *));
 /* Import fonts */
 @font-face {
-  font-family: 'DM Sans';
+  font-family: "DM Sans";
   font-style: normal;
   font-weight: 100 900;
-  src: url('/fonts/dm-sans/DMSans-VariableFont_opsz-wght.ttf')
-    format('truetype');
+  src: url("/fonts/dm-sans/DMSans-VariableFont_opsz-wght.ttf")
+    format("truetype");
   font-display: swap;
 }
 @font-face {
-  font-family: 'Playfair Display';
+  font-family: "Playfair Display";
   font-style: normal;
   font-weight: 100 900;
-  src: url('/fonts/playfair-display/PlayfairDisplay-VariableFont_wght.ttf')
-    format('truetype');
+  src: url("/fonts/playfair-display/PlayfairDisplay-VariableFont_wght.ttf")
+    format("truetype");
   font-display: swap;
 }
 @theme {
   /* Colors */
-  --color-hueso-light: #f4f3ee;
-  --color-gray-dark: #1e1e1e;
+  --color-custom-gray-50: #ffffff;
+  --color-custom-gray-100: #e6e6e6;
+  --color-custom-gray-200: #cdcdcd;
+  --color-custom-gray-300: #b4b4b4;
+  --color-custom-gray-400: #9b9b9b;
+  --color-custom-gray-500: #828282;
+  --color-custom-gray-600: #696969;
+  --color-custom-gray-700: #505050;
+  --color-custom-gray-800: #373737;
+  --color-custom-gray-900: #1e1e1e;
+
+  --color-custom-blue-50: #e5f5ff;
+  --color-custom-blue-100: #ccebff;
+  --color-custom-blue-200: #99d6ff;
+  --color-custom-blue-300: #66c2ff;
+  --color-custom-blue-400: #33adff;
+  --color-custom-blue-500: #0099ff;
+  --color-custom-blue-600: #007acc;
+  --color-custom-blue-700: #005c99;
+  --color-custom-blue-800: #003d66;
+  --color-custom-blue-900: #001f33;
+
+  --color-hueso-light: #f4f3ee; /* Bg light */
+  --color-gray-dark: var(--color-custom-gray-900); /* Bg dark */
+  --color-text-primary-light: var(--color-custom-gray-700);
+  --color-text-secondary-light: var(--color-custom-gray-600);
+  --color-text-primary-dark: var(--color-custom-gray-300);
+  --color-text-secondary-dark: var(--color-custom-gray-400);
 
   /* Fonts */
-  --font-DM-Sans: 'DM Sans';
-  --font-Playfair-Display: 'Playfair Display';
+  --font-DM-Sans: "DM Sans";
+  --font-Playfair-Display: "Playfair Display";
 }
 @layer base {
+  body {
+    @apply text-text-primary-light dark:text-text-primary-dark bg-hueso-light dark:bg-gray-dark font-DM-Sans;
+  }
   h1 {
-    @apply text-4xl font-extrabold font-Playfair-Display text-gray-700 dark:text-gray-300 mb-7 md:text-5xl;
+    @apply text-4xl font-extrabold font-Playfair-Display text-text-secondary-light dark:text-text-secondary-dark mb-7 md:text-5xl;
   }
   h2 {
-    @apply text-3xl font-bold font-Playfair-Display text-gray-700 dark:text-gray-300 mb-4;
+    @apply text-3xl font-bold font-Playfair-Display text-text-secondary-light dark:text-text-secondary-dark mb-4;
   }
   h3 {
-    @apply text-2xl font-semibold font-Playfair-Display text-gray-700 dark:text-gray-300 mb-4;
+    @apply text-2xl font-semibold font-Playfair-Display text-text-secondary-light dark:text-text-secondary-dark mb-4;
   }
   h4 {
-    @apply text-xl font-medium font-Playfair-Display text-gray-700 dark:text-gray-300 mb-4;
+    @apply text-xl font-medium font-Playfair-Display text-text-secondary-light dark:text-text-secondary-dark mb-4;
   }
   h5 {
-    @apply text-lg font-medium font-Playfair-Display text-gray-700 dark:text-gray-300 mb-4;
+    @apply text-lg font-medium font-Playfair-Display text-text-secondary-light dark:text-text-secondary-dark mb-4;
   }
   h6 {
-    @apply text-base font-medium font-Playfair-Display text-gray-700 dark:text-gray-300 mb-4;
+    @apply text-base font-medium font-Playfair-Display text-text-secondary-light dark:text-text-secondary-dark mb-4;
   }
   p {
-    @apply md:text-lg max-w-prose text-gray-700 dark:text-gray-300 leading-relaxed mb-4;
+    @apply md:text-lg max-w-prose text-text-primary-light dark:text-text-primary-dark leading-relaxed mb-4;
   }
   a {
-    @apply text-blue-800 dark:text-blue-300 underline hover:text-blue-800 hover:no-underline;
+    @apply text-custom-blue-700 dark:text-custom-blue-300 underline hover:text-custom-blue-600 hover:no-underline;
   }
 }
