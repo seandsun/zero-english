@@ -53,6 +53,9 @@
   /* Fonts */
   --font-DM-Sans: "DM Sans";
   --font-Playfair-Display: "Playfair Display";
+
+  /* Animations */
+  --animate-floating-circle: 20s infinite;
 }
 @layer base {
   body {
@@ -81,5 +84,33 @@
   }
   a {
     @apply text-custom-blue-700 dark:text-custom-blue-300 underline hover:text-custom-blue-600 hover:no-underline;
+  }
+}
+@layer utilities {
+  @keyframes floating-circle {
+    0% {
+      left: 0px;
+      top: 40px;
+    }
+    25% {
+      left: -100px;
+      top: 70px;
+    }
+    50% {
+      left: 20px;
+      top: 30px;
+    }
+    75% {
+      left: 50px;
+      top: 40px;
+    }
+    100% {
+      left: 0px;
+      top: 40px;
+    }
+  }
+
+  .animate-floating-circle {
+    animation: floating-circle var(--animate-floating-circle);
   }
 }

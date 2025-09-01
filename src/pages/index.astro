@@ -1,11 +1,54 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from '@/layouts/Layout.astro';
+import Button from '@/components/ui/Button.astro';
+import Link from '@/components/ui/Link.astro';
+import Icon from '@/components/icons/icon.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Zero English"
+  description="Página de inicio del proyecto zero english"
+>
+  <div class="min-h-screen relative">
+    <div class="absolute top-[0px] inset-0 inline-flex z-0">
+      <!-- start bg -->
+      <div
+        class="absolute top-[0px] inset-0 inline-flex justify-center overflow-hidden"
+      >
+        <div
+          class="relative animate-floating-circle bg-custom-blue-400 opacity-30 blur-[60px] dark:blur-[90px] size-[330px] rounded-full mr-14"
+        >
+        </div>
+        <div
+          class="relative animate-floating-circle bg-custom-blue-400 opacity-30 blur-[60px] dark:blur-[90px] size-[330px] rounded-full"
+        >
+        </div>
+      </div>
+      <!-- end bg -->
+      <div class="mx-auto mt-12 flex flex-col items-center px-4">
+        <img
+          class="w-[250px] bg-black rounded-full z-10"
+          src={`${import.meta.env.BASE_URL}favicon.svg`}
+          alt="Logo del proyecto zero english"
+        />
+        <h1
+          class="uppercase italic font-medium text-custom-gray-900 dark:text-custom-blue-50 text-center mt-6 mb-4"
+        >
+          Zero English
+        </h1>
+        <p
+          class="text-sm text-center text-pretty text-text-secondary-light dark:text-text-secondary-dark mb-10 md:text-base"
+        >
+          "Lo que fue, ya se ha ido; lo que sueñas, aún te espera."
+        </p>
+        <Link href={`${import.meta.env.BASE_URL}english`}>
+          <Button size="lg" class="cursor-pointer">
+            Get Started <Fragment slot="iconRight">
+              <Icon name="arrowRight" /></Fragment
+            >
+          </Button>
+        </Link>
+      </div>
+    </div>
+  </div>
 </Layout>
