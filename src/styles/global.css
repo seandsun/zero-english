@@ -59,7 +59,7 @@
 }
 @layer base {
   body {
-    @apply text-text-primary-light dark:text-text-primary-dark bg-hueso-light dark:bg-gray-dark font-DM-Sans;
+    @apply text-text-primary-light dark:text-text-primary-dark bg-hueso-light dark:bg-gray-dark font-DM-Sans min-h-dvh;
   }
   h1 {
     @apply text-4xl font-extrabold font-Playfair-Display text-text-secondary-light dark:text-text-secondary-dark mb-7 md:text-5xl;
