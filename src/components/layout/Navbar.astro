@@ -25,15 +25,21 @@ const currentPathname = Astro.url.pathname;
   class={`${isHorizontal ? 'hidden md:flex md:gap-8' : 'flex flex-col gap-5 w-full mt-[86px]'}`}
 >
   {
-    navItems.map((item: NavItem) => (
-      <li>
-        <a
-          class={`text-md font-semibold pt-0.5 pb-1 px-2 rounded-sm shadow-sm no-underline md:text-base ${currentPathname === item.href ? 'bg-custom-blue-50 text-custom-blue-700' : 'bg-white text-gray-950'} hover:text-custom-blue-600 transition-all duration-300 ease-in-out`}
-          href={item.href}
-        >
-          {item.name}
-        </a>
-      </li>
-    ))
+    navItems.map((item: NavItem) => {
+      const isActive =
+        currentPathname === item.href ||
+        (item.href !== siteBase && currentPathname.startsWith(item.href));
+
+      return (
+        <li>
+          <a
+            class={`text-md font-semibold pt-0.5 pb-1 px-2 rounded-sm shadow-sm no-underline md:text-base ${isActive ? 'bg-custom-blue-50 text-custom-blue-700' : 'bg-white text-gray-950'} hover:text-custom-blue-600 transition-all duration-300 ease-in-out`}
+            href={item.href}
+          >
+            {item.name}
+          </a>
+        </li>
+      );
+    })
   }
 </ul>
