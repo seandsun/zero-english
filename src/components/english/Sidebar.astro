@@ -1,0 +1,33 @@
+---
+import Icon from '@/components/icons/icon.astro';
+
+interface Props {
+  title: string;
+  links: { href: string; text: string }[];
+}
+
+const { title, links } = Astro.props as Props;
+---
+
+<aside
+  class="w-full px-2 py-2.5 flex flex-col justify-center gap-1.5 mb-10 rounded-md border border-custom-blue-700 dark:border-custom-blue-500 font-medium text-sm xl:fixed xl:right-8 xl:top-[160px] xl:w-60 xl:mb-auto"
+>
+  <span
+    class="flex items-center gap-2 text-lg text-custom-blue-700 dark:text-custom-blue-500"
+  >
+    <div>
+      <Icon name="handClick" />
+    </div>
+    {title}
+  </span>
+  {
+    links.map(({ href, text }) => (
+      <a
+        href={`#${href}`}
+        class="bg-gradient-to-b from-custom-blue-200 to-custom-blue-500 text-gray-dark rounded-[2px] p-1"
+      >
+        {text}
+      </a>
+    ))
+  }
+</aside>
