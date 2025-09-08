@@ -6,6 +6,12 @@ const english = defineCollection({
     description: z.string(),
     author: z.string(),
     date: z.string(),
+    links: z.array(
+      z.object({
+        href: z.string(),
+        text: z.string(),
+      })
+    ).optional() // Por si alguna pagina no lo tiene
   })
 })
 
