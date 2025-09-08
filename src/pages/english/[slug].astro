@@ -5,6 +5,7 @@ import Layout from '@/layouts/Layout.astro';
 import Section from '@/components/english/Section.astro';
 import ButtonGoBack from '@/components/ui/ButtonGoBack.astro';
 import Icon from '@/components/icons/icon.astro';
+import Sidebar from '@/components/english/Sidebar.astro';
 
 export async function getStaticPaths() {
   const topics: CollectionEntry<'english'>[] = await getCollection('english');
@@ -17,7 +18,7 @@ export async function getStaticPaths() {
 
 const { topic } = Astro.props;
 const { data } = topic;
-const { title, description } = data;
+const { title, description, links } = data;
 
 const { Content } = await render(topic);
 ---
@@ -25,6 +26,9 @@ const { Content } = await render(topic);
 <Layout title={title} description={description}>
   <Section>
     <h1 class="max-w-3xl px-6 md:px-12">{title}</h1>
+    <div class="max-w-3xl w-full px-6 md:px-12">
+      {links && <Sidebar title={title} links={links} />}
+    </div>
     <Content />
     <div
       class="fixed left-1 bottom-6 xl:top-1/2 xl:-translate-y-1/2 xl:left-32 xl:bottom-auto"
