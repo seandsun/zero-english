@@ -15,6 +15,6 @@ export default defineConfig({
     },
   },
   integrations: [mdx()],
-  site: 'https://seandsun.github.io/portfolio-marisol-henao/',
-  base: '/portfolio-marisol-henao/',
+  site: 'https://seandsun.github.io/zero-english/',
+  base: '/zero-english/',
 });
