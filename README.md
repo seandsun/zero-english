@@ -1,46 +1,55 @@
-# Astro Starter Kit: Basics
+# ZERO ENGLISH 😸
 
-```sh
-npm create astro@latest -- --template basics
-```
+El objetivo de este proyecto es documentar mi trayectoria en el aprendizaje del inglés. A través de este repositorio, busco reflejar de manera tangible mi progreso, desde los conceptos más básicos hasta lograr fluidez en el idioma.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+![Home de zero english](./src/assets/images/zero-english.jpg)
 
-## 🚀 Project Structure
+## 🛠️ Tecnologías usadas para la construcción de este proyecto
 
-Inside of your Astro project, you'll see the following folders and files:
+- Framework: [Astro](https://astro.build/) 🚀
+- Contenido: [MDX](https://mdxjs.com/) 🩻
+- Estilos: [Tailwind CSS](https://tailwindcss.com/) 🎨
+
+## 🧱 Estructura del proyecto
 
 ```text
-/
+zero-english/
 ├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+├── src/
+│   ├── assets/
+│   │   └── images/
+│   ├── components/
+│   │   ├── english/
+│   │   ├── icons/
+│   │   ├── layout/
+│   │   └── ui/
+│   ├── content/
+│   │   └── english/
+│   │       └── example.mdx
+│   ├── data/
+│   │    └── data.ts
+│   ├── layouts/
+│   │   └── Layout.astro
+│   ├── pages/
+│   │   ├── english/
+│   │   │   ├── [slug].astro
+│   │   │   └── index.astro       
+│   │   └── index.astro
+│   ├── styles/
+│   │    └── global.css
+│   └── types/
+│       └── types.ts
+├── CHANGELOG.md
+├── LICENSE
+├── package.json
+├── .gitignore
+├── .prettierrc
+├── astro.config.mjs
+├── tsconfig.json
+├── package-lock.json
+└── README.md
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+>Made by Marisol Henao - Proyecto personal educativo (2025)
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+<h3 align="center">< seandsun /></h3>
