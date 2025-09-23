@@ -33,7 +33,7 @@ const currentPathname = Astro.url.pathname;
       return (
         <li>
           <a
-            class={`text-md font-semibold pt-0.5 pb-1 px-2 rounded-sm shadow-sm no-underline md:text-base ${isActive ? 'bg-custom-blue-50 text-custom-blue-700' : 'bg-white text-gray-950'} hover:text-custom-blue-600 transition-all duration-300 ease-in-out`}
+            class={`text-md font-semibold pt-0.5 pb-1 px-2 rounded-sm shadow-sm no-underline md:text-base ${isActive ? 'bg-custom-gray-900 text-white dark:bg-white dark:text-custom-gray-900' : 'bg-black/10 text-custom-gray-900 dark:bg-white/10 dark:text-white hover:text-custom-blue-600 dark:hover:text-custom-blue-500 transition-all duration-300 ease-in-out'}`}
             href={item.href}
           >
             {item.name}
