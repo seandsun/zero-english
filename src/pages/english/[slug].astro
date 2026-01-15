@@ -7,6 +7,9 @@ import ButtonGoBack from '@/components/ui/ButtonGoBack.astro';
 import Icon from '@/components/icons/icon.astro';
 import Sidebar from '@/components/english/Sidebar.astro';
 import High from '@/components/ui/Highlight.astro';
+import Slugg from '@/components/english/Slug.astro';
+import Table from '@/components/english/Table.astro';
+import Notice from '@/components/english/Notice.astro';
 
 export async function getStaticPaths() {
   const topics: CollectionEntry<'english'>[] = await getCollection('english');
@@ -51,6 +54,10 @@ const { Content } = await render(topic);
 // importarlos manualmente desde cada archivo .mdx
 const components = {
   High,
+  Slugg,
+  Table,
+  Notice,
+  Icon,
 };
 ---
 
