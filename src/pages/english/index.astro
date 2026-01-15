@@ -21,7 +21,7 @@ const topics: CollectionEntry<'english'>[] = await getCollection('english');
 // no las "partes" divididas o sub-paginas
 const mainTopics = topics
   .filter(topic => !topic.data.isPart)
-  .sort((a,b) => b.data.date.getTime() - a.data.date.getTime());
+  .sort((a,b) => a.data.date.getTime() - b.data.date.getTime());
 
 // 2. Mapear la lista y formatear la fecha para cada tema
 const preparedTopics: PreparedTopic[] = mainTopics.map((topic) => {
