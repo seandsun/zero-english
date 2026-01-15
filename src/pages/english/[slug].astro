@@ -6,6 +6,7 @@ import Section from '@/components/english/Section.astro';
 import ButtonGoBack from '@/components/ui/ButtonGoBack.astro';
 import Icon from '@/components/icons/icon.astro';
 import Sidebar from '@/components/english/Sidebar.astro';
+import High from '@/components/ui/Highlight.astro';
 
 export async function getStaticPaths() {
   const topics: CollectionEntry<'english'>[] = await getCollection('english');
@@ -45,6 +46,12 @@ const currentPath = Astro.url.pathname;
 const { title, description } = topic.data;
 
 const { Content } = await render(topic);
+
+// Componentes globales: al pasarlos desde aquí ya no tengo que
+// importarlos manualmente desde cada archivo .mdx
+const components = {
+  High,
+};
 ---
 
 <Layout title={title} description={description}>
@@ -62,7 +69,7 @@ const { Content } = await render(topic);
       }
     </div>
     <h1 class="max-w-3xl px-6 md:px-12">{title}</h1>
-    <Content />
+    <Content components={components} />
 
     <div
       class="max-w-3xl px-6 md:px-12 flex justify-between gap-4 border-t border-custom-gray-200 dark:border-custom-gray-800 pt-8 pb-12"
