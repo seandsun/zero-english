@@ -14,19 +14,21 @@ interface PreparedTopic {
   formattedDate: string;
 }
 
-// 1. Obtener y ordenar los temas
+// 1. Obtener los temas
 const topics: CollectionEntry<'english'>[] = await getCollection('english');
 
-const sortedTopics = topics.sort((a, b) => {
-  return new Date(a.data.date).getTime() - new Date(b.data.date).getTime();
-});
+// 2. Filtrar y ordernar para mostrar solos los temas principales,
+// no las "partes" divididas o sub-paginas
+const mainTopics = topics
+  .filter(topic => !topic.data.isPart)
+  .sort((a,b) => b.data.date.getTime() - a.data.date.getTime());
 
 // 2. Mapear la lista y formatear la fecha para cada tema
-const preparedTopics: PreparedTopic[] = sortedTopics.map((topic) => {
+const preparedTopics: PreparedTopic[] = mainTopics.map((topic) => {
   const { slug, data } = topic;
   const { title, description, author, date } = data;
 
-  const formattedDate = new Date(date).toLocaleDateString('es-CO', {
+  const formattedDate = date.toLocaleDateString('es-CO', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',

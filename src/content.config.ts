@@ -5,13 +5,9 @@ const english = defineCollection({
     title: z.string(),
     description: z.string(),
     author: z.string(),
-    date: z.string(),
-    links: z.array(
-      z.object({
-        href: z.string(),
-        text: z.string(),
-      })
-    ).optional() // Por si alguna pagina no lo tiene
+    date: z.coerce.date(),
+    order: z.number().default(0), // Para ordenar partes de un tema
+    isPart: z.boolean().default(false), // Para saber si es una sub-página
   })
 })
 
