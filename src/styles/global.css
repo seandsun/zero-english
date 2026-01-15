@@ -87,9 +87,6 @@
   }
 }
 @layer components {
-  .highlight {
-    @apply text-custom-blue-700 dark:text-custom-blue-300;
-  }
 }
 @layer utilities {
   @keyframes floating-circle {
