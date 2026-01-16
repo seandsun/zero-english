@@ -37,6 +37,7 @@ const isActive = (href: string) => {
       relatedLinks.map(({ href, text }) => (
         <a
           href={href}
+          aria-current={isActive(href) ? 'page' : undefined}
           class:list={[
             'rounded-[2px] p-1',
             isActive(href)
